@@ -2,8 +2,8 @@
 
 /**
  * main - opens a monty script file for parsing
- * @ac: count of arguments
- * @av: array of arguments
+ * @argc: count of arguments
+ * @argv: array of arguments
  *
  * Return: EXIT_SUCCESS on success, EXIT_FAILURE on failure
  */

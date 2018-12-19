@@ -1,6 +1,12 @@
 #include "monty.h"
 
-/* TODO - check if double pointer manipulation of struct is valid */
+/**
+ * parseline - tokenizes a line of text, storing it in line struct
+ * @line: struct containing line contents and line number
+ * @buffer: string of text read from script file
+ *
+ * Return: Nothing
+ */
 void parseline(line_t *line, char *buffer)
 {
 	unsigned int i;
@@ -23,6 +29,12 @@ void parseline(line_t *line, char *buffer)
 	line->content[i] = NULL;
 }
 
+/**
+ * parsefile - reads and parses file one line at a time
+ * @file: the script to be read
+ *
+ * Return: Nothing
+ */
 void parsefile(FILE *file)
 {
 	size_t size = 0;
@@ -32,7 +44,6 @@ void parsefile(FILE *file)
 
 	line.number = 0;
 	line.content = NULL;
-	/* create_st(&stack); */
 
 	while (getline(&buffer, &size, file) != -1)
 	{

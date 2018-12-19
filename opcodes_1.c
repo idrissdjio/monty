@@ -1,5 +1,12 @@
 #include "monty.h"
 
+/**
+ * push - pushes a node to the top of stack
+ * @stack: pointer to the head node pointer of stack
+ * @nline: the line number
+ *
+ * Return: Nothing.
+ */
 void push(stack_t **stack, unsigned int nline)
 {
 	stack_t *new;
@@ -26,6 +33,13 @@ void push(stack_t **stack, unsigned int nline)
 	*stack = new;
 }
 
+/**
+ * pall - prints the data of all nodes in stack
+ * @stack: pointer to the head node pointer of stack
+ * @nline: the line number
+ *
+ * Return: Nothing.
+ */
 void pall(stack_t **stack, unsigned int nline)
 {
 	stack_t *temp;
@@ -39,29 +53,12 @@ void pall(stack_t **stack, unsigned int nline)
 	}
 }
 
-void create_st(stack_t **stack)
-{
-	(void)stack;
-/*
-	stack_t *new = NULL;
-
-	if (stack == NULL)
-		exit(EXIT_FAILURE);
-
-	new = malloc(sizeof(stack_t));
-	if (new == NULL)
-	{
-		fprintf(stderr, "Error: malloc failed\n");
-		exit(EXIT_FAILURE);
-	}
-
-	new->next = NULL;
-	new->n = 0;
-	new->prev = NULL;
-	*stack = new;
-*/
-}
-
+/**
+ * free_stack - frees all nodes in a stack
+ * @stack: pointer to the head node pointer of stack
+ *
+ * Return: Nothing.
+ */
 void free_stack(stack_t **stack)
 {
 	stack_t *temp = NULL;
