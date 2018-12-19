@@ -1,3 +1,5 @@
+#include "monty.h"
+
 /**
  * main - opens a monty script file for parsing
  * @ac: count of arguments
