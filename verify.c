@@ -30,10 +30,6 @@ bool argument_check(char *token)
 
 void push_check(line_t line, instruction_t ops[], unsigned int i)
 {
-	stack_t *stack = NULL;
-
-	create_st(&stack);
-
 	if (strcmp(ops[i].opcode, "push") == 0 && !argument_check(line.content[1]))
 	{
 		free(line.content);
