@@ -1,5 +1,6 @@
 #include "monty.h"
 
+/* TODO - check if double pointer manipulation of struct is valid */
 void parseline(line_t *line, char *buffer)
 {
 	unsigned int i;
