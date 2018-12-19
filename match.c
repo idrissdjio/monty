@@ -4,9 +4,9 @@ void (*get_op_func(line_t line))(stack_t **, unsigned int)
 {
 	unsigned int i;
 	instruction_t ops[] = {
-/*
 		{"push", push},
 		{"pall", pall},
+/*
 		{"pint", pint},
 		{"pop", pop},
 		{"swap", swap},
@@ -24,7 +24,7 @@ void (*get_op_func(line_t line))(stack_t **, unsigned int)
 	{
 		if (strcmp(ops[i].opcode, line.content[0]) == 0)
 		{
-			push_check(line);
+			push_check(line, ops, i);
 			free(line.content);
 			return(ops[i].f);
 		}

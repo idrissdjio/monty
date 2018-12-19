@@ -20,7 +20,7 @@ void push(stack_t **stack, unsigned int nline)
 
 	new->next = *stack;
 	new->prev = NULL;
-	new->n = data.data_n;
+	new->n = argument;
 }
 
 void pall(stack_t **stack, unsigned int nline)
@@ -51,7 +51,7 @@ void create_st(stack_t **stack)
 	}
 
 	new->next = NULL;
-	new->n = data.data_n;
+	new->n = 0;
 	new->prev = NULL;
 	*stack = new;
 }
@@ -61,7 +61,7 @@ void free_stack(stack_t **stack)
 	stack_t *temp = NULL;
 
 	if (stack == NULL || *stack == NULL)
-		return (NULL);
+		return;
 
 	while (*stack != NULL)
 	{
