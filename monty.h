@@ -55,10 +55,10 @@ extern int argument;
 
 /* Parse functions */
 void parsefile(FILE *file);
-char **parseline(char *line);
+void parseline(line_t *line, char *buffer);
 
 /* Verification functions */
 bool comment_check(line_t line);
-void push_check(char **line.content);
+void push_check(line_t line);
 
 #endif /* MONTY_H */
