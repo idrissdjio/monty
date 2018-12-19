@@ -22,6 +22,8 @@ void (*get_op_func(line_t line))(stack_t **, unsigned int)
 		if (strcmp(ops[i].opcode, line.content[0]) == 0)
 		{
 			push_check(line);
+			if (strcmp(line.content, "push") == 0)
+			
 			free(line.content);
 			return(ops[i].f);
 		}
