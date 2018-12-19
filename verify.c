@@ -22,9 +22,12 @@ bool argument_check(char *token)
 	}
 
 	return (true);
+}
 
 void push_check(line_t line)
 {
+	stack_t *stack = NULL;
+
 	if (strcmp(ops[i], "push") == 0 && !argument_check(line.content[1]))
 	{
 		free(line.content);
@@ -32,5 +35,8 @@ void push_check(line_t line)
 		exit(EXIT_FAILURE);
 	}
 	else if (strcmp(ops[i].opcode, "push") == 0)
+	{
 		argument = atoi(line.content[1]);
+		create_st(stack);
+	}
 }
