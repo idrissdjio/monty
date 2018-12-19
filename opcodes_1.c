@@ -4,7 +4,7 @@ void push(stack_t **stack, unsigned int nline)
 {
 	stack_t *new;
 
-	if (stack == NULL || *stack == NULL)
+	if (stack == NULL)
 	{
 		fprintf(stderr, "L%d: stack not found\n", nline);
 		exit(EXIT_FAILURE);
