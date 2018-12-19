@@ -1,3 +1,7 @@
+#include "monty.h"
+
+int argument = 0;
+
 bool comment_check(line_t line)
 {
 	if (line.content[0][0] == '#')
@@ -24,11 +28,13 @@ bool argument_check(char *token)
 	return (true);
 }
 
-void push_check(line_t line)
+void push_check(line_t line, instruction_t ops[], unsigned int i)
 {
 	stack_t *stack = NULL;
 
-	if (strcmp(ops[i], "push") == 0 && !argument_check(line.content[1]))
+	create_st(&stack);
+
+	if (strcmp(ops[i].opcode, "push") == 0 && !argument_check(line.content[1]))
 	{
 		free(line.content);
 		printf("L%d: usage: push integer\n", line.number);
@@ -37,6 +43,5 @@ void push_check(line_t line)
 	else if (strcmp(ops[i].opcode, "push") == 0)
 	{
 		argument = atoi(line.content[1]);
-		create_st(stack);
 	}
 }
