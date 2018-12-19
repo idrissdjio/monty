@@ -27,13 +27,14 @@ void parsefile(FILE *file)
 {
 	size_t size = 0;
 	char *buffer;
-	stack_t *stack;
+	stack_t *stack = NULL;
 	line_t line;
 
 	line.number = 0;
 	line.content = NULL;
+	/* create_st(&stack); */
 
-	while (getline(&buffer, &size, file))
+	while (getline(&buffer, &size, file) != -1)
 	{
 		line.number++;
 		parseline(&line, buffer);
