@@ -1,3 +1,5 @@
+#include "monty.h"
+
 void push(stack_t **stack, unsigned int nline)
 {
 	stack_t *new;
@@ -12,7 +14,7 @@ void push(stack_t **stack, unsigned int nline)
 	if (new == NULL)
 	{
 		fprintf(stderr, "Error: malloc failed\n");
-		free_st(stack);
+		free_stack(stack);
 		exit(EXIT_FAILURE);
 	}
 
