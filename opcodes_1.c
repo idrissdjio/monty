@@ -53,3 +53,18 @@ void create_st(stack_t **stack)
 	new->prev = NULL;
 	*stack = new;
 }
+
+void free_stack(stack_t **stack)
+{
+	stack_t *temp = NULL;
+
+	if (stack == NULL || *stack == NULL)
+		return (NULL);
+
+	while (*stack != NULL)
+	{
+		temp = (*stack)->next;
+		free(*stack);
+		*stack = temp;
+	}
+}
