@@ -7,6 +7,9 @@
 #include <unistd.h>
 #include <stdbool.h>
 
+/* External variable declarations */
+extern int argument;
+
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
  * @n: integer
@@ -50,8 +53,8 @@ typedef struct line
 	char **content;
 } line_t;
 
-/* External variable declarations */
-extern int argument;
+/* Important functions */
+void (*get_op_func(line_t line))(stack_t **, unsigned int);
 
 /* Parse functions */
 void parsefile(FILE *file);
@@ -59,6 +62,12 @@ void parseline(line_t *line, char *buffer);
 
 /* Verification functions */
 bool comment_check(line_t line);
-void push_check(line_t line);
+void push_check(line_t line, instruction_t ops[], unsigned int i);
+
+/* Stack manipulation functions */
+void push(stack_t **stack, unsigned int nline);
+void pall(stack_t **stack, unsigned int nline);
+void create_st(stack_t **stack);
+void free_stack(stack_t **stack);
 
 #endif /* MONTY_H */
