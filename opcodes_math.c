@@ -8,21 +8,19 @@
  */
 void addop(stack_t **stack, unsigned int nline)
 {
-	int res = 0;
+	stack_t *temp;
 
-	if (stack == NULL || *stack == NULL)
+	if (!(*stack) || !(*stack)->next)
 	{
 		fprintf(stderr, "L%d: can't add, stack too short\n", nline);
-		free(stack);
 		exit(EXIT_FAILURE);
 	}
 
-	res += (*stack)->n;
-	res += (*stack)->next->n;
-
-	/* pop current, then override current n*/
-	pop(stack, nline);
-	(*stack)->n = res;
+	temp = *stack;
+	(*stack)->next->n += (*stack)->n;
+	*stack = (*stack)->next;
+	(*stack)->prev = NULL;
+	free(temp);
 }
 
 /**
