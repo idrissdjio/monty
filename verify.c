@@ -49,8 +49,7 @@ bool argument_check(char *token)
  * push_check - check if push opcode is being used and sets global
  * argument variable if true
  * @line: struct containing line contents and line number
- * @ops: array containing opcode and function structs
- * @i: index of element in 'ops' array
+ * @opcode: the opcode to compare
  *
  * Return: Nothing.
  */
