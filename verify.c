@@ -10,6 +10,9 @@ int argument = 0;
  */
 bool comment_check(line_t line)
 {
+	if (!line.content[0])
+		return (true);
+
 	if (line.content[0][0] == '#')
 	{
 		free(line.content);
