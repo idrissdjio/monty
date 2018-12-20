@@ -16,10 +16,12 @@ void (*get_op_func(line_t line))(stack_t **, unsigned int)
 		{"pint", pint},
 		{"pop", pop},
 		{"swap", swap},
-		{"add", add},
+		{"add", addop},
+		{"sub", subop},
+		{"div", divop},
 		{"nop", nop},
 		{"pchar", pchar},
-		{"rotr", rotr},
+		/*{"rotr", rotr},*/
 		{NULL, NULL}
 	};
 
