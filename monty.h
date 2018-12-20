@@ -72,6 +72,7 @@ typedef struct meta_s
 
 /* Important functions */
 void (*get_op_func(line_t line, meta_t *meta))(stack_t **, unsigned int);
+int _isalpha(int c);
 
 /* Parse functions */
 void parsefile(FILE *file);
