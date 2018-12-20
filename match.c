@@ -4,10 +4,11 @@
  * get_op_func - function searches for a match between opcode and text
  * and returns the corresponding function
  * @line: struct containing line contents and line number
+ * @meta: struct containing all allocated memory
  *
  * Return: pointer to the matching function
  */
-void (*get_op_func(line_t line))(stack_t **, unsigned int)
+void (*get_op_func(line_t line, meta_t *meta))(stack_t **, unsigned int)
 {
 	unsigned int i = 0;
 	instruction_t ops[] = {
@@ -34,7 +35,7 @@ void (*get_op_func(line_t line))(stack_t **, unsigned int)
 	{
 		if (strcmp(ops[i].opcode, line.content[0]) == 0)
 		{
-			push_check(line, ops[i].opcode);
+			push_check(line, meta, ops[i].opcode);
 			free(line.content);
 			return (ops[i].f);
 		}
@@ -45,5 +46,9 @@ void (*get_op_func(line_t line))(stack_t **, unsigned int)
 	fprintf(stderr, "L%d: unknown instruction %s\n", line.number,
 	line.content[0]);
 	free(line.content);
+	free(meta->buf);
+	free_stack(&(meta->stack));
+	fclose(meta->file);
+	free(meta);
 	exit(EXIT_FAILURE);
 }

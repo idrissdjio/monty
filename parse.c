@@ -38,22 +38,33 @@ void parseline(line_t *line, char *buffer)
 void parsefile(FILE *file)
 {
 	size_t size = 0;
-	char *buffer = NULL;
-	stack_t *stack = NULL;
+	meta_t *meta = NULL;
 	line_t line;
+
+	meta = malloc(sizeof(meta_t));
+	if (!meta)
+	{
+		fprintf(stderr, "Error: malloc failed");
+		exit(EXIT_FAILURE);
+	}
 
 	line.number = 0;
 	line.content = NULL;
 
-	while (getline(&buffer, &size, file) != -1)
+	meta->file = file;
+	meta->stack = NULL;
+	meta->buf = NULL;
+
+	while (getline(&(meta->buf), &size, meta->file) != -1)
 	{
 		line.number++;
-		parseline(&line, buffer);
+		parseline(&line, meta->buf);
 		if (line.content)
-			get_op_func(line)(&stack, line.number);
+			get_op_func(line, meta)(&(meta->stack), line.number);
 	}
 
-	fclose(file);
-	free(buffer);
-	free_stack(&stack);
+	free(meta->buf);
+	free_stack(&(meta->stack));
+	fclose(meta->file);
+	free(meta);
 }
