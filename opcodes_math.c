@@ -37,7 +37,7 @@ void subop(stack_t **stack, unsigned int nline)
 
 	if (!(*stack) || !(*stack)->next)
 	{
-		printf("L%d: can't sub, stack too short\n", nline);
+		fprintf(stderr, "L%d: can't sub, stack too short\n", nline);
 		exit(EXIT_FAILURE);
 	}
 
@@ -60,13 +60,13 @@ void divop(stack_t **stack, unsigned int nline)
 
 	if (!(*stack) || !(*stack)->next)
 	{
-		printf("L%d: can't div, stack too short\n", nline);
+		fprintf(stderr, "L%d: can't div, stack too short\n", nline);
 		exit(EXIT_FAILURE);
 	}
 
 	if ((*stack)->n == 0)
 	{
-		printf("L%d: division by zero\n", nline);
+		fprintf(stderr, "L%d: division by zero\n", nline);
 		exit(EXIT_FAILURE);
 	}
 
@@ -89,7 +89,7 @@ void mulop(stack_t **stack, unsigned int nline)
 
 	if (!(*stack) || !(*stack)->next)
 	{
-		printf("L%d: can't mul, stack too short\n", nline);
+		fprintf(stderr, "L%d: can't mul, stack too short\n", nline);
 		exit(EXIT_FAILURE);
 	}
 
@@ -112,13 +112,13 @@ void modop(stack_t **stack, unsigned int nline)
 
 	if (!(*stack) || !(*stack)->next)
 	{
-		printf("L%d: can't mod, stack too short\n", nline);
+		fprintf(stderr, "L%d: can't mod, stack too short\n", nline);
 		exit(EXIT_FAILURE);
 	}
 
 	if ((*stack)->n == 0)
 	{
-		printf("L%d: division by zero\n", nline);
+		fprintf(stderr, "L%d: division by zero\n", nline);
 		exit(EXIT_FAILURE);
 	}
 

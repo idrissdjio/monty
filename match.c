@@ -42,7 +42,7 @@ void (*get_op_func(line_t line))(stack_t **, unsigned int)
 		i++;
 	}
 
-	printf("L%d: unknown instruction %s\n", line.number, line.content[0]);
+	fprintf(stderr, "L%d: unknown instruction %s\n", line.number, line.content[0]);
 	free(line.content);
 	exit(EXIT_FAILURE);
 }

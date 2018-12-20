@@ -56,7 +56,7 @@ void push_check(line_t line, instruction_t ops[], unsigned int i)
 	if (strcmp(ops[i].opcode, "push") == 0 && !argument_check(line.content[1]))
 	{
 		free(line.content);
-		printf("L%d: usage: push integer\n", line.number);
+		fprintf(stderr, "L%d: usage: push integer\n", line.number);
 		exit(EXIT_FAILURE);
 	}
 	else if (strcmp(ops[i].opcode, "push") == 0)

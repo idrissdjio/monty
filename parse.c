@@ -15,7 +15,7 @@ void parseline(line_t *line, char *buffer)
 	line->content = malloc(sizeof(char *) * 3);
 	if (!line->content)
 	{
-		printf("Error: malloc failed");
+		fprintf(stderr, "Error: malloc failed");
 		exit(EXIT_FAILURE);
 	}
 
