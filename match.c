@@ -9,7 +9,7 @@
  */
 void (*get_op_func(line_t line))(stack_t **, unsigned int)
 {
-	unsigned int i;
+	unsigned int i = 0;
 	instruction_t ops[] = {
 		{"push", push},
 		{"pall", pall},
@@ -22,8 +22,7 @@ void (*get_op_func(line_t line))(stack_t **, unsigned int)
 	};
 
 	if (comment_check(line))
-		return (NULL);
-/*		return (nop); */
+		return (nop);
 
 	while (ops[i].opcode)
 	{

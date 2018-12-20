@@ -38,7 +38,7 @@ void parseline(line_t *line, char *buffer)
 void parsefile(FILE *file)
 {
 	size_t size = 0;
-	char *buffer;
+	char *buffer = NULL;
 	stack_t *stack = NULL;
 	line_t line;
 
