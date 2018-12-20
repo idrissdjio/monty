@@ -33,8 +33,10 @@ bool argument_check(char *token)
 	{
 		if (token[0] == '-')
 			continue;
-		if (token[i] <= '0' || token[i] >= '9')
+		if (token[i] < '0' || token[i] > '9')
+		{
 			return (false);
+		}
 	}
 
 	return (true);
