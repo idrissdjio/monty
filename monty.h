@@ -73,5 +73,6 @@ void swap(stack_t **stack, unsigned int nline);
 void add(stack_t **stack, unsigned int nline);
 void create_st(stack_t **stack);
 void free_stack(stack_t **stack);
+void nop(stack_t **stack, unsigned int nline);
 
 #endif /* MONTY_H */
