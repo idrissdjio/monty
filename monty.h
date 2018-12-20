@@ -76,5 +76,6 @@ void nop(stack_t **stack, unsigned int nline);
 void pchar(stack_t **stack, unsigned int nline);
 void rotr(stack_t **stack, unsigned int nline);
 void free_stack(stack_t **stack);
+void nop(stack_t **stack, unsigned int nline);
 
 #endif /* MONTY_H */
