@@ -31,34 +31,32 @@ void rotl(stack_t **stack, unsigned int nline)
 	(*stack)->n = hold_this_again;
 	temp->n = hold_this;
 }
+
 /**
- * rotr - does literally nothing
+ * rotrop - does literally nothing
  * @stack: pointer to the head node pointer of stack
  * @nline: the line number
  * Return: Nothing.
-void rotr(stack_t **stack, unsigned int nline)
-{
-
-}
  */
-/**
- * m_st - does literally nothing
- * @stack: pointer to the head node pointer of stack
- * @nline: the line number
- * Return: Nothing.
-void m_st(stack_t **stack, unsigned int nline)
+void rotrop(stack_t **stack, unsigned int nline)
 {
+	stack_t *last, *tmp;
 
+	(void)nline;
+	if (!stack || !(*stack) || !((*stack)->next))
+		return;
+
+	tmp = *stack;
+	last = tmp;
+
+	while (last->next)
+	{
+		last = last->next;
+	}
+
+	last->prev->next = NULL;
+	last->prev = NULL;
+	tmp->prev = last;
+	last->next = tmp;
+	*stack = last;
 }
- */
-/**
- * m_qu - does literally nothing
- * @stack: pointer to the head node pointer of stack
- * @nline: the line number
- * Return: Nothing.
-
-void m_qu(stack_t **stack, unsigned int nline)
-{
-
-}
-*/
