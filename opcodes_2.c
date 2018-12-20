@@ -1,5 +1,11 @@
 #include "monty.h"
 
+/**
+ * pint - prints the value at the top of stack
+ * @stack: pointer to the head node pointer of stack
+ * @nline: the line number
+ * Return: Nothing.
+ */
 void pint(stack_t **stack, unsigned int nline)
 {
 	stack_t *temp;
@@ -15,7 +21,12 @@ void pint(stack_t **stack, unsigned int nline)
 
 	printf("%d\n", temp->n);
 }
-
+/**
+ * pop - removes the top element of stack
+ * @stack: pointer to the head node pointer of stack
+ * @nline: the line number
+ * Return: Nothing.
+ */
 void pop(stack_t **stack, unsigned int nline)
 {
 	if (stack == NULL || *stack == NULL)
@@ -36,7 +47,12 @@ void pop(stack_t **stack, unsigned int nline)
 		*stack = NULL;
 	}
 }
-
+/**
+ * swap - swaps the top two elements of the stack
+ * @stack: pointer to the head node pointer of stack
+ * @nline: the line number
+ * Return: Nothing.
+ */
 void swap(stack_t **stack, unsigned int nline)
 {
 	int temp;
@@ -52,7 +68,12 @@ void swap(stack_t **stack, unsigned int nline)
 	(*stack)->n = (*stack)->next->n;
 	(*stack)->next->n = temp;
 }
-
+/**
+ * add - adds the top two elements together
+ * @stack: pointer to the head node pointer of stack
+ * @nline: the line number
+ * Return: Nothing.
+ */
 void add(stack_t **stack, unsigned int nline)
 {
 	int res = 0;
