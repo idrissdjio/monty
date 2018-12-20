@@ -69,6 +69,8 @@ void push(stack_t **stack, unsigned int nline);
 void pall(stack_t **stack, unsigned int nline);
 void pint(stack_t **stack, unsigned int nline);
 void pop(stack_t **stack, unsigned int nline);
+void swap(stack_t **stack, unsigned int nline);
+void add(stack_t **stack, unsigned int nline);
 void create_st(stack_t **stack);
 void free_stack(stack_t **stack);
 
