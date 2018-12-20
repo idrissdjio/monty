@@ -126,20 +126,11 @@ void pstr(stack_t **stack, unsigned int nline)
 	while (temp)
 	{
 		if (temp->next == NULL)
-		{
-			printf("\n");
-			exit(EXIT_FAILURE);
-		}
+			break;
 		if (temp->n == 0)
-		{
-			printf("\n");
-			exit(EXIT_FAILURE);
-		}
+			break;
 		if (_isalpha(temp->n) == 0)
-		{
-			printf("\n");
-			exit(EXIT_FAILURE);
-		}
+			break;
 		c = temp->n;
 		printf("%c", c);
 		res[idx] += c;
