@@ -63,7 +63,7 @@ void parseline(line_t *line, char *buffer);
 
 /* Verification functions */
 bool comment_check(line_t line);
-void push_check(line_t line, instruction_t ops[], unsigned int i);
+void push_check(line_t line, char *opcode);
 
 /* Stack manipulation functions */
 void push(stack_t **stack, unsigned int nline);

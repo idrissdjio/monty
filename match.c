@@ -34,7 +34,7 @@ void (*get_op_func(line_t line))(stack_t **, unsigned int)
 	{
 		if (strcmp(ops[i].opcode, line.content[0]) == 0)
 		{
-			push_check(line, ops, i);
+			push_check(line, ops[i].opcode);
 			free(line.content);
 			return (ops[i].f);
 		}
