@@ -8,15 +8,26 @@
  */
 void rotl(stack_t **stack, unsigned int nline)
 {
-	int temp;
-	stack_t *temp = *stack;
+	stack_t *temp;
+	int hold_this, hold_this_again;
 	(void)nline;
 
 	if (stack == NULL || *stack == NULL)
 	{
-		nop(stack);
+		nop(stack, nline);
 	}
 
-	temp = (*stack)->n;
-	printf("this number: %d\n", temp);
+	hold_this = (*stack)->n;
+	temp = *stack;
+
+	while (temp)
+	{
+		if (temp->next == NULL)
+			break;
+		temp = temp->next;
+	}
+
+	hold_this_again = temp->n;
+	(*stack)->n = hold_this_again;
+	temp->n = hold_this;
 }

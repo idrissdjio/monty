@@ -19,7 +19,7 @@ void (*get_op_func(line_t line))(stack_t **, unsigned int)
 		{"add", add},
 		{"nop", nop},
 		{"pchar", pchar},
-		{"rotr", rotr},
+		{"rotl", rotl},
 		{NULL, NULL}
 	};
 
