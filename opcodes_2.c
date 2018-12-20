@@ -1,5 +1,5 @@
 #include "monty.h"
-
+int _isalpha(int c);
 /**
  * pint - prints the value at the top of stack
  * @stack: pointer to the head node pointer of stack
@@ -108,4 +108,41 @@ void pchar(stack_t **stack, unsigned int nline)
 	}
 	c = temp->n;
 	printf("%c\n", c);
+}
+/**
+ * pstr - prints a str from ascii starting from the top
+ * @stack: pointer to the head node pointer of stack
+ * @nline: the line number
+ * Return: Nothing.
+ */
+void pstr(stack_t **stack, unsigned int nline)
+{
+	int idx = 0;
+	char res[] = "";
+	char c;
+	stack_t *temp;
+
+	if (stack == NULL || *stack == NULL)
+	{	
+		fprintf(stderr, "L%d: can't pchar, stack empty", nline);
+		exit(EXIT_FAILURE);
+	}
+
+	temp = *stack;
+	/* starts at the top */
+	while (temp)
+	{
+		if (temp->next == NULL)
+			break;
+		if (temp->n == 0)
+			break;
+		if (_isalpha(temp->n) == 0)
+			break;
+		c = temp->n;
+		printf("%c", c);
+		res[idx] += c;
+		temp = temp->next;
+		idx++;
+	}
+	printf("\n");	
 }

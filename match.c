@@ -23,6 +23,7 @@ void (*get_op_func(line_t line))(stack_t **, unsigned int)
 		{"mod", modop},
 		{"nop", nop},
 		{"pchar", pchar},
+		{"pstr", pstr},
 		{"rotl", rotl},
 		{NULL, NULL}
 	};
