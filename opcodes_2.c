@@ -125,8 +125,6 @@ void pstr(stack_t **stack, unsigned int nline)
 	/* starts at the top */
 	while (temp)
 	{
-		if (temp->next == NULL)
-			break;
 		if (temp->n == 0)
 			break;
 		if (_isalpha(temp->n) == 0)
