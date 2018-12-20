@@ -51,7 +51,7 @@ gcc -Wall -Werror -Wextra -pedantic *.c -o monty
 * Contains push, pall, free_stack, and nop.
 
 ### [opcodes_2.c](./opcodes_2.c)
-* Contains pint, pop, swap, and add.
+* Contains pint, pop, swap, add, and pchar.
 
 ---
 

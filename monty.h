@@ -6,6 +6,7 @@
 #include <string.h>
 #include <unistd.h>
 #include <stdbool.h>
+#include <ctype.h>
 
 /* External variable declarations */
 extern int argument;
@@ -71,7 +72,9 @@ void pint(stack_t **stack, unsigned int nline);
 void pop(stack_t **stack, unsigned int nline);
 void swap(stack_t **stack, unsigned int nline);
 void add(stack_t **stack, unsigned int nline);
-void create_st(stack_t **stack);
+void nop(stack_t **stack, unsigned int nline);
+void pchar(stack_t **stack, unsigned int nline);
+void rotr(stack_t **stack, unsigned int nline);
 void free_stack(stack_t **stack);
 void nop(stack_t **stack, unsigned int nline);
 
