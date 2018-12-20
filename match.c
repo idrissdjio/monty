@@ -19,6 +19,8 @@ void (*get_op_func(line_t line))(stack_t **, unsigned int)
 		{"add", addop},
 		{"sub", subop},
 		{"div", divop},
+		{"mul", mulop},
+		{"mod", modop},
 		{"nop", nop},
 		{"pchar", pchar},
 		/*{"rotr", rotr},*/
