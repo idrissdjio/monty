@@ -137,5 +137,6 @@ void pstr(stack_t **stack, unsigned int nline)
 		temp = temp->next;
 		idx++;
 	}
-	printf("\n");	
+	if (idx != 0)
+		printf("\n");
 }
