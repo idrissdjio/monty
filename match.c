@@ -27,6 +27,8 @@ void (*get_op_func(line_t line, meta_t *meta))(stack_t **, unsigned int)
 		{"pstr", pstr},
 		{"rotl", rotlop},
 		{"rotr", rotrop},
+		{"stack", addst},
+		{"queue", addqu},
 		{NULL, NULL}
 	};
 
@@ -38,6 +40,9 @@ void (*get_op_func(line_t line, meta_t *meta))(stack_t **, unsigned int)
 		if (strcmp(ops[i].opcode, line.content[0]) == 0)
 		{
 			push_check(line, meta, ops[i].opcode);
+			if (arg.flag == 1 &&
+			strcmp(ops[i].opcode, "push") == 0)
+				return (qpush);
 			free(line.content);
 			return (ops[i].f);
 		}

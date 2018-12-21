@@ -1,6 +1,6 @@
 #include "monty.h"
 
-int argument = 0;
+arg_t arg = {0, 0};
 
 /**
  * comment_check - checks if line is a comment
@@ -70,5 +70,5 @@ void push_check(line_t line, meta_t *meta, char *opcode)
 		exit(EXIT_FAILURE);
 	}
 	else if (strcmp(opcode, "push") == 0)
-		argument = atoi(line.content[1]);
+		arg.arg = atoi(line.content[1]);
 }

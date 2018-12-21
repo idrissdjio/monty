@@ -8,8 +8,22 @@
 #include <stdbool.h>
 #include <ctype.h>
 
-/* External variable declarations */
-extern int argument;
+/**
+ * struct stack_s - doubly linked list representation of a stack (or queue)
+ * @n: integer
+ * @prev: points to the previous element of the stack (or queue)
+ * @next: points to the next element of the stack (or queue)
+ *
+ * Description: doubly linked list node structure
+ * for stack, queues, LIFO, FIFO Holberton project
+ */
+typedef struct arg_s
+{
+	int arg;
+	int flag;
+} arg_t;
+
+extern arg_t arg;
 
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
@@ -96,6 +110,9 @@ void pchar(stack_t **stack, unsigned int nline);
 void pstr(stack_t **stack, unsigned int nline);
 void free_stack(stack_t **stack);
 void nop(stack_t **stack, unsigned int nline);
+void qpush(stack_t **stack, unsigned int nline);
+void addqu(stack_t **stack, unsigned int nline);
+void addst(stack_t **stack, unsigned int nline);
 
 /* Math functions */
 void subop(stack_t **stack, unsigned int nline);
