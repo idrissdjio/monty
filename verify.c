@@ -11,7 +11,10 @@ arg_t arg = {0, 0};
 bool comment_check(line_t line)
 {
 	if (!line.content[0])
+	{
+		free(line.content);
 		return (true);
+	}
 
 	if (line.content[0][0] == '#')
 	{
