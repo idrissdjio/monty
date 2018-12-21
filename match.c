@@ -42,7 +42,11 @@ void (*get_op_func(line_t line, meta_t *meta))(stack_t **, unsigned int)
 			push_check(line, meta, ops[i].opcode);
 			if (arg.flag == 1 &&
 			strcmp(ops[i].opcode, "push") == 0)
+			{
+				if (line.content)
+					free(line.content);
 				return (qpush);
+			}
 			free(line.content);
 			return (ops[i].f);
 		}
