@@ -33,7 +33,7 @@ void rotl(stack_t **stack, unsigned int nline)
 }
 
 /**
- * rotlop - does literally nothing
+ * rotlop - rotates stack to left
  * @stack: pointer to the head node pointer of stack
  * @nline: the line number
  * Return: Nothing.
@@ -62,7 +62,7 @@ void rotlop(stack_t **stack, unsigned int nline)
 }
 
 /**
- * rotrop - does literally nothing
+ * rotrop - rotates stack to right
  * @stack: pointer to the head node pointer of stack
  * @nline: the line number
  * Return: Nothing.
@@ -91,7 +91,7 @@ void rotrop(stack_t **stack, unsigned int nline)
 }
 
 /**
- * rotrop - does literally nothing
+ * qpush - pushes for queue instead of stack
  * @stack: pointer to the head node pointer of stack
  * @nline: the line number
  * Return: Nothing.
