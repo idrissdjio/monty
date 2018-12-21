@@ -25,12 +25,11 @@ gcc -Wall -Werror -Wextra -pedantic *.c -o monty
 
 ## Example
 
-* ![demo](https://puu.sh/CksXw/b90dd61cb5.png)
+![demo](https://puu.sh/CksXw/b90dd61cb5.png)
 
 ---
 
 ## Files
-
 
 ### [monty.c](./monty.c)
 * Contains the main function that takes in the file and runs the parser.
@@ -39,10 +38,10 @@ gcc -Wall -Werror -Wextra -pedantic *.c -o monty
 * Header file.
 
 ### [parse.c](./parse.c)
-* Functions that parses the file from main, then parses the lines and stores to buffer.
+* Functions that parses the file from main, then parses the lines. While parsing, data is stored into structs to be passed onto other functions.
 
 ### [verify.c](./verify.c)
-* Contains functions that checks arguments from lines of the file.
+* Contains functions that checks arguments from lines of the file. Checks for if push function is in the file line.
 
 ### [match.c](./match.c)
 * Our get operations function that matches the aruguments with what opcode function we need to run.
@@ -51,7 +50,16 @@ gcc -Wall -Werror -Wextra -pedantic *.c -o monty
 * Contains push, pall, free_stack, and nop.
 
 ### [opcodes_2.c](./opcodes_2.c)
-* Contains pint, pop, swap, add, and pchar.
+* Contains pint, pop, swap, pchar, and pstr.
+
+### [opcodes_3.c](./opcodes_3.c)
+* Contains rotl, rotr, qpush.
+
+### [opcodes_math.c](./opcodes_math.c)
+* Contains add, sub, div, mul, mod.
+
+### [opcodes_mode.c](./opcodes_mode.c)
+* Contains stack and queue.
 
 ---
 
